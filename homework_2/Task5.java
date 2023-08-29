@@ -4,6 +4,7 @@ public class Task5 {
         char e = 'E';
         char l = 'L';
         char o = 'O';
-        System.out.print("" + h + e + l + l + o);
+        String word = "" + h + e + l + l + o;
+        System.out.print(word.toLowerCase());
     }
 }

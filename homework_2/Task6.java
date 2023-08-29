@@ -12,7 +12,7 @@ public class Task6 {
         int n9 = 9;
         int i = n0 + n1 + n2 + n3 + n4 + n5 + n6 + n7 + n8 + n9;
         int res = i / 10;
-        double res1 = ((double) i / 10);
+        double res1 = i / 10.0;
         System.out.println(res + ", " + res1);
         System.out.println(res < res1);
     }
