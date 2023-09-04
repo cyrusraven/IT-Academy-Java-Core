@@ -6,7 +6,7 @@ public class Task1 {
         System.out.println(getAverage(x, y, z));
     }
 
-    static double getAverage(int x, int y, int z){
+    static double getAverage(int x, int y, int z) {
         return x > z ? (double) (x + y) / 2 : z;
     }
 }
