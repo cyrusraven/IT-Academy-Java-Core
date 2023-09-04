@@ -3,18 +3,14 @@ public class Task3 {
         int a = 24;
         int b = 40;
         int c = 50;
-        System.out.println(getTriangle(a, b, c));
+        System.out.println(isTriangle(a, b, c));
     }
-    static boolean getTriangle(int a, int b, int c) {
-        return isMore1(a, b, c) && isMore2(a, b, c) && isMore3(a, b, c);
+
+    static boolean isTriangle(int a, int b, int c) {
+        return isSumGreater(a, b, c) && isSumGreater(a, c, b) && isSumGreater(b, c, a);
     }
-    static boolean isMore1(int a, int b, int c) {
+
+    static boolean isSumGreater(int a, int b, int c) {
         return a + b > c;
-    }
-    static boolean isMore2(int a, int b, int c) {
-        return a + c > b;
-    }
-    static boolean isMore3(int a, int b, int c) {
-        return b + c > a;
     }
 }

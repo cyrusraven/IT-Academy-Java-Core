@@ -3,6 +3,7 @@ public class Task2 {
         int num = 1;
         System.out.println(numOfMonth(num));
     }
+
     static String numOfMonth(int num) {
         return switch (num) {
             case 12, 1, 2 -> "Зима";

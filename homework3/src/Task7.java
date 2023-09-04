@@ -5,14 +5,14 @@ public class Task7 {
         int c = 100;
         int d = -47;
         int e = -10;
+        System.out.println(maxMinOrEqually(a, b, c, d, e));
+    }
+
+    static String maxMinOrEqually(int a, int b, int c, int d, int e) {
         int max = 0;
         int min = 0;
         String maxNum = "a";
         String minNum = "a";
-        System.out.println(maxMinOrEqually(a, b, c, d, e, max, min, maxNum, minNum));
-    }
-
-    static String maxMinOrEqually(int a, int b, int c, int d, int e, int max, int min, String maxNum, String minNum) {
         if (a == b && a == c && a == d && a == e) {
             return "Числа между собой равны " + a;
         }
