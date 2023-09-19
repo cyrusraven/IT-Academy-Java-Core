@@ -25,7 +25,7 @@ public class Task1 {
         System.out.println("Максимальный элемент: " + max);
     }
 
-    static void printMinOfArray (double[] arr) {
+    static void printMinOfArray(double[] arr) {
         double min = arr[0];
         for (double v : arr) {
             if (min > v) {
@@ -35,7 +35,7 @@ public class Task1 {
         System.out.println("Минимальный элемент: " + min);
     }
 
-    static void printAverageOfArray (double[] arr) {
+    static void printAverageOfArray(double[] arr) {
         double average = 0;
         for (double v : arr) {
             average += v;

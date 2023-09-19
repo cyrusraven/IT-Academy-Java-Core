@@ -47,7 +47,7 @@ public class Task8 {
     }
 
     static String dayOfWeek(int dayOfYear) {
-       return switch (dayOfYear % 7) {
+        return switch (dayOfYear % 7) {
             case 1 -> " понедельник";
             case 2 -> " вторник";
             case 3 -> " среда";
@@ -67,4 +67,3 @@ public class Task8 {
         };
     }
 }
-

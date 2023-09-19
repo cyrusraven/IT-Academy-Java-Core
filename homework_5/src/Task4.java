@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Task4 {
     public static void main(String[] args) {
         int[] arr = new int[]{4, 7, 45, 10, 1, 11, 9, 18};
@@ -19,9 +21,7 @@ public class Task4 {
             arr1[i] = row;
         }
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr1[i].length; j++) {
-                System.out.print(arr1[i][j] + " ");
-            }
+            System.out.print(Arrays.toString(arr1[i]));
             System.out.println();
         }
     }
