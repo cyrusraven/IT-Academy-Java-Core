@@ -2,27 +2,30 @@ package by.it.academy.task3;
 
 public class Farm {
     private final FarmAnimal[] farmAnimals;
+    private int count;
 
-    public Farm(FarmAnimal... farmAnimals) {
-        this.farmAnimals = farmAnimals;
+    public Farm(int size) {
+        farmAnimals = new FarmAnimal[size];
+        count = 0;
     }
 
-    public void getProduct() {
-        for (FarmAnimal farmAnimal : farmAnimals) {
-            int week = farmAnimal.getProductivityPerWeek();
-            int month = farmAnimal.getProductivityPerWeek() * 4;
-            int year = month * 12;
-            System.out.println(farmAnimal.getName() + " дают " + week + " " + farmAnimal.getUnit() + " "
-                    + farmAnimal.getProduct() + " в неделю, " + month + " " + farmAnimal.getUnit() + " в месяц и "
-                    + year + " " + farmAnimal.getUnit() + " в год.");
-        }
+    public void addAnimal(FarmAnimal farmAnimal) {
+        farmAnimals[count] = farmAnimal;
+        count++;
     }
 
-    public void print () {
-        for (FarmAnimal farmAnimal : farmAnimals) {
-            System.out.println(farmAnimal.getName() + " дают: "
-                    + farmAnimal.getProduct());
+    public void printProducts() {
+        for (int i = 0; i < count; i++) {
+            FarmAnimal farmAnimal = farmAnimals[i];
+            System.out.println("Животное: " + farmAnimal.getName());
+            System.out.println("Продукт: " + farmAnimal.getProduct());
+            System.out.println("Количество продукции в неделю: " + farmAnimal.getProductivityPerWeek() + " "
+                    + farmAnimal.getUnit());
+            System.out.println("Количество продукции в месяц: " + farmAnimal.getProductivityPerWeek() * 4 + " "
+                    + farmAnimal.getUnit());
+            System.out.println("Количество продукции в год: " + farmAnimal.getProductivityPerWeek() * 4 * 12 + " "
+                    + farmAnimal.getUnit());
+            System.out.println();
         }
-        System.out.println();
     }
 }

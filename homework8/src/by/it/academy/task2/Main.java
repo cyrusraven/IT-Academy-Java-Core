@@ -2,22 +2,19 @@ package by.it.academy.task2;
 
 import java.util.Arrays;
 
-public class Main {
+public class Main implements Comparable {
     public static void main(String[] args) {
-        Airplane airplane1 = new Airplane(500, 300, 4000.0, "Boeng 747");
-        Airplane airplane2 = new Airplane(600, 400, 4500.0, "Boeng 748");
-        Airplane airplane3 = new Airplane(700, 500, 5000.0, "Boeng 749");
-
-        Helicopter helicopter1 = new Helicopter(200, 8, 500, "Bell 407");
-        Helicopter helicopter2 = new Helicopter(250, 9, 400, "Bell 408");
-        Helicopter helicopter3 = new Helicopter(300, 10, 300, "Bell 409");
-
-        Quadcopter quadcopter1 = new Quadcopter(100, 3, 200, "DJI Phantom 4");
-        Quadcopter quadcopter2 = new Quadcopter(150, 4, 250, "DJI Phantom 5");
-        Quadcopter quadcopter3 = new Quadcopter(200, 5, 300, "DJI Phantom 6");
-
-        Aircraft[] aircrafts = new Aircraft[]{airplane1, airplane2, airplane3, helicopter1, helicopter2, helicopter3,
-                quadcopter1, quadcopter2, quadcopter3};
+        Aircraft[] aircrafts = new Aircraft[] {
+                new Airplane(500, 300, 4000.0, "Boeng 747"),
+                new Airplane(600, 400, 4500.0, "Boeng 748"),
+                new Airplane(700, 500, 5000.0, "Boeng 749"),
+                new Helicopter(200, 8, 500, "Bell 407"),
+                new Helicopter(250, 9, 400, "Bell 408"),
+                new Helicopter(300, 10, 300, "Bell 409"),
+                new Quadcopter(100, 3, 200, "DJI Phantom 4"),
+                new Quadcopter(150, 4, 250, "DJI Phantom 5"),
+                new Quadcopter(200, 5, 300, "DJI Phantom 6")
+        };
 
         sortArr(aircrafts);
         showSortedAircraft(aircrafts);
@@ -68,5 +65,10 @@ public class Main {
                 System.out.println(aircraft.getName());
             }
         }
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
