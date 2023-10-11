@@ -2,7 +2,7 @@ package by.it.academy.task2;
 
 import java.util.Arrays;
 
-public class Main implements Comparable {
+public class Main {
     public static void main(String[] args) {
         Aircraft[] aircrafts = new Aircraft[] {
                 new Airplane(500, 300, 4000.0, "Boeng 747"),
@@ -65,10 +65,5 @@ public class Main implements Comparable {
                 System.out.println(aircraft.getName());
             }
         }
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        return 0;
     }
 }
