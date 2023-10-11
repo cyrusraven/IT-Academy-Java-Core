@@ -17,11 +17,7 @@ public abstract class Shape {
         return material;
     }
 
-    public double calculateArea() {
-        return 0;
-    }
+    public abstract double calculateArea();
 
-    public double calculatePerimeter() {
-        return 0;
-    }
+    public abstract double calculatePerimeter();
 }

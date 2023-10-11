@@ -8,21 +8,15 @@ public class Student extends Person {
         this.year = year;
     }
 
-    public int setYear() {
-        int yearCount = 0;
-        while (yearCount < 4) {
-            year++;
-            yearCount++;
-        }
-        return year;
+    public void setYear(int year) {
+        this.year = year;
     }
 
-    @Override
-    public String toString() {
-        return "имя: " + getName() + "\n" +
-                "возраст: " + getAge() + "\n" +
-                "пол: " + getGender() + "\n" +
-                "вес: " + getWeight() + " кг" + "\n" +
-                "годы обучения: " + year + "-" + setYear();
+    public int incYear() {
+       return year++;
+    }
+
+    public int getYear() {
+        return year;
     }
 }
