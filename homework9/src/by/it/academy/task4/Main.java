@@ -8,7 +8,7 @@ public class Main {
                 {10, 2, 16, 3}
         };
 
-        ArrayIterator<Integer> arrayIterator = new ArrayIterator<>(array);
+        Matrix<Integer> arrayIterator = new Matrix<>(array);
         while (arrayIterator.hasNext()) {
             System.out.print(arrayIterator.next() + " ");
         }

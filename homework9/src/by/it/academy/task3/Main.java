@@ -5,12 +5,11 @@ public class Main {
         Integer[] intArray = {1, 4, 6, 9, 8, 9};
         Array<Integer> array = new Array<>(intArray);
 
-        System.out.println(array.getElement(1));
+        System.out.println(array + "\n");
 
-        array.putElement(3, 5);
+        array.changeElement(3, 5);
+        System.out.println(array + "\n");
 
-        while (array.hasNext()) {
-            System.out.print(array.next() + " ");
-        }
+        System.out.println("Элемент: " + array.getElement(1));
     }
 }

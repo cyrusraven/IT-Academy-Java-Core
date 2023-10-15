@@ -2,25 +2,54 @@ package by.it.academy.task6;
 
 public class Calendar {
     public static void main(String[] args) {
-        getDayInfo(345);
+        getDayInfo(365);
 
-        System.out.println("Day of the year: " + getDayOfYear(Month.MARCH, 30));
+        getDayOfTheYear();
     }
 
     public static void getDayInfo(int dayOfTheYear) {
-        Month[] months = Month.values();
-        int numOfMonth = (dayOfTheYear - 1) / 30;
-        int dayOfMonth = (dayOfTheYear - 1) % 30 + 1;
-        DayOfWeek dayOfWeek = DayOfWeek.values()[(dayOfMonth - 1) % 7];
-        Season season = Season.values()[3 / numOfMonth];
+        int numOfTheMonth = 0;
+        int dayOfTheMonth;
+        int dayOfTheWeek = 1;
 
-        System.out.println(dayOfTheYear + "th day of the year it's: ");
-        System.out.println(season + "\n" +  months[numOfMonth].name() + " " + dayOfMonth + "th"
-                + ", " + dayOfWeek.name());
+        while (true) {
+            int daysInTheMonth = Month.values()[numOfTheMonth].getDays();
+            if (dayOfTheYear <= daysInTheMonth) {
+                dayOfTheMonth = dayOfTheYear;
+                break;
+            }
+            dayOfTheYear -= daysInTheMonth;
+            numOfTheMonth++;
+        }
+
+        Month month = Month.values()[numOfTheMonth];
+        dayOfTheWeek = (dayOfTheWeek + dayOfTheYear - 1) % 7;
+        Season season = getSeason(numOfTheMonth);
+
+        System.out.println(season + "\n" +  month + " " + dayOfTheMonth + "th"
+                + ", " + DayOfWeek.values()[(dayOfTheWeek + 2) % 7]);
         System.out.println();
     }
 
-    public static int getDayOfYear(Month month, int dayOfMonth) {
-        return (month.ordinal() * 30) + dayOfMonth;
+    public static void getDayOfTheYear() {
+        int dayOfYear = 30;
+
+        for (int i = 0; i < Month.MARCH.ordinal(); i++) {
+            dayOfYear += Month.values()[i].getDays();
+        }
+
+        System.out.println(Month.MARCH + " " + 30 + "th. " + "Day of the year: " + dayOfYear);
+    }
+
+    public static Season getSeason(int numOfTheMonth) {
+        if (numOfTheMonth >= 2 && numOfTheMonth <= 4) {
+            return Season.SPRING;
+        } else if (numOfTheMonth >= 5 && numOfTheMonth <= 7) {
+            return Season.SUMMER;
+        } else if (numOfTheMonth >= 8 && numOfTheMonth <= 10) {
+            return Season.AUTUMN;
+        } else {
+            return Season.WINTER;
+        }
     }
 }

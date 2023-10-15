@@ -1,8 +1,8 @@
 package by.it.academy.task5;
 
-public class Meat extends Food {
-    public Meat(String name) {
-        super(name);
+public class Chicken extends Food {
+    public Chicken() {
+        super("Chicken");
     }
 
     @Override

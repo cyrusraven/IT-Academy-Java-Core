@@ -1,6 +1,8 @@
 package by.it.academy.task1;
 
-public class SomeClass<T extends String, V extends Animal, K extends Number> {
+import java.io.Serializable;
+
+public class SomeClass<T extends String, V extends Animal & Serializable, K extends Number> {
     private T t;
     private V v;
     private K k;

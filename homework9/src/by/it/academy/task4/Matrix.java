@@ -2,12 +2,12 @@ package by.it.academy.task4;
 
 import java.util.Iterator;
 
-public class ArrayIterator<T> implements Iterator<T> {
+public class Matrix<T> implements Iterator<T> {
     private final T[][] array;
     private int i;
     private int j;
 
-    public ArrayIterator(T[][] array) {
+    public Matrix(T[][] array) {
         this.array = array;
     }
 
