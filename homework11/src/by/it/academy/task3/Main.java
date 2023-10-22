@@ -1,28 +1,27 @@
 package by.it.academy.task3;
 
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
         NumberGuessing numberGuessing = new NumberGuessing();
-        int attempt  = 100;
+        int min = 0;
+        int max = 1000;
+        int attempt  = 0;
 
         while (true) {
-            int hiddenNumber = new Random().nextInt(1001);
-
+            int hiddenNumber = min + (max - min) / 2;
             try {
                 numberGuessing.numberGuessingAlgorithm(hiddenNumber);
+                System.out.println("It's right: " + hiddenNumber);
+                System.out.println("Attempts: " + attempt);
                 break;
-            } catch (LessException | GreaterException e) {
-                System.out.println(e.getMessage());
+            } catch (LessException e) {
+                System.out.println("Attempt " + attempt + ": " + e.getMessage());
+                min = hiddenNumber + 1;
+            } catch (GreaterException e) {
+                System.out.println("Attempt " + attempt + ": " + e.getMessage());
+                max = hiddenNumber - 1;
             }
-
-            if (numberGuessing.getAttempt() >= attempt) {
-                System.out.println("Too many tries.");
-                break;
-            }
+            attempt++;
         }
-        System.out.println("Hidden number: " + numberGuessing.getHiddenNumber() + "\n"
-                + "Attempts: " + numberGuessing.getAttempt());
     }
 }
