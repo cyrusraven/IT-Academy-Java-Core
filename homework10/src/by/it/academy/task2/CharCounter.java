@@ -1,0 +1,16 @@
+package by.it.academy.task2;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class CharCounter {
+    public static Map<Character, Integer> getCharsCount(String s) {
+        Map<Character, Integer> charCountMap = new HashMap<>();
+
+        for (char c : s.toCharArray()) {
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+        }
+
+        return charCountMap;
+    }
+}
